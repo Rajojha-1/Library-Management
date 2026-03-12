@@ -18,7 +18,9 @@ app.use((req, res, next) => {
 
 app.use("/api", bookRoutes);
 app.use(errorHandler);
-
+app.get("/", (req, res) => {
+  res.send("Library Management API is running");
+});
 const startServer = async () => {
 	try {
 		console.log("[INIT] Starting Library Management backend...");
